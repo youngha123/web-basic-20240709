@@ -1,0 +1,13 @@
+@font-face {
+    font-family: kakao;
+    src: url(./font/KakaoRegular.ttf);
+}
+
+body {
+    font-family: kakao, sans-serif;
+}
+
+#wrapper { 
+    display: flex;
+    justify-content: center;
+}

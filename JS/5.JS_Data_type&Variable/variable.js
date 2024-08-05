@@ -1,29 +1,46 @@
 /*
-    변수 : 
-    - 
+    변수 : 데이터를 저장하는 공간에 이름을 부여한 것
+    - var, let, const 키워드를 사용하여 변수 선언
+    - javascript는 변수의 타입이 존재하지 않음
 */
-
+var varVariable = 10;
+let letVariable = 10;
+const constVariable = 10;
 
 
 /*
-    변수의 중복 선언 : 
+    변수의 중복 선언 : var 키워드를 사용한 변수 선언 시 중복 선언이 가능
 */
+var age = 30;
+var age = 20;
 
+// let로 선언한 변수는 중복 선언 불가능
+let address = '부산시';
+// let address = '울산시';
 
 
 /*
-    동적 타이핑 : 
+    동적 타이핑 : 변수의 타입이 데이터가 할당된 순간에 결정됨
 */
-
+var variable;
+console.log(typeof variable);
+variable = 10;
+console.log(typeof variable);
 
 
 /*
-    변수 호이스팅 : 
+    변수 호이스팅 : var 키워드 혹은 function 키워드로 선언한 변수 혹은 함수에 대해서 스코프가 최상위로 옮겨지는 것
     - 변수 생성 3 단계
-    - 선언 단계 : 
-    - 초기화 단계 : 
-    - 할당 단계 : 
+    - 선언 단계 : 변수를 등록하는 단계
+    - 초기화 단계 : 변수에 undefined 할당되는 단계
+    - 할당 단계 : 실제값이 할당
 */
+console.log(x);
+if (true) {
+    var x = 100;
+}
+console.log(x);
+
 
 
 

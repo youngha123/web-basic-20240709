@@ -128,11 +128,20 @@ var soonJong = goJong;
 // console.log(soonJong);
 // console.log(goJong);
 
-soonJong = {
-    name: goJong.name,
-    age: goJong.age,
-    address: goJong.address
-};
+// soonJong = {
+//     name: goJong.name,
+//     age: goJong.age,
+//     address: goJong.address
+// };
+// soonJong.name = '이척';
+
+// var soonJong = {};
+// for (var key in goJong) {
+//     soonJong[key] = goJong[key];
+// }
+// soonJong.name = '이척';
+
+var soonJong = { ...goJong };
 soonJong.name = '이척';
 console.log(soonJong);
 console.log(goJong);

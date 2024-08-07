@@ -11,9 +11,9 @@
 
     <script>
 
-        /* **
-            JSON: Javascript Object Notation
-            - 클라이언트와 서버 간 데이터 교환을 위한 문자열 포맷
+        /*
+            JSON: JavaScript Object Notation
+            - 클라이언트와 서버 간 데이터 교환을 위한 문자열 포멧
             - XML 포맷보다 가볍고 사용성이 편리함
             - 자바스크립트 객체 리터럴과 동일하게 생겼지만, JSON은 100% 텍스트
         */
@@ -29,19 +29,18 @@
 
         var jsonEmployee = JSON.stringify(employee);
         console.log(jsonEmployee, typeof jsonEmployee);
-        
 
         console.log('==============================');
 
         /*
-            JSON.parse(JSON 문자열) : JSON 형식의 문자열 데이터를 자바스크립트 객체로 변경 
+            JSON.parse(JSON 문자열) : JSON 형식의 문자열 데이터를 자바스크립트 객체로 변경
         */
         var stringJson = '{"name": "이성계", "age": 55}';
         console.log(stringJson, typeof stringJson);
-        
-        var King = JSON.parse(stringJson);
-        console.log(King, typeof King);
-        console.log(King.name, King.age);
+
+        var king = JSON.parse(stringJson);
+        console.log(king, typeof king);
+        console.log(king.name, king.age);
 
         console.log('==============================');
 
@@ -56,6 +55,7 @@
         /*
             Request
         */
+        
         // fetch 함수는 기본적으로 GET 요청
         fetch('http://localhost:5500');
 
@@ -65,8 +65,17 @@
             body: stringJson
         });
 
-        var queryString = new URLSearchParams(King).toString();
+        // QueryString으로 데이터를 전송하는 방법
+        var queryString = new URLSearchParams(king).toString();
         fetch('http://localhost:5500/?' + queryString);
+
+        
+        var response = 
+            fetch('https://reqres.in/api/users?page=2').then(function (response) {
+                console.log('then 작업');
+                console.log(response.json());
+            });
+        console.log('fetch 종료');
 
         console.log('==============================');
 

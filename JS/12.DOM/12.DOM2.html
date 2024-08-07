@@ -58,11 +58,12 @@
 </head>
 
 <body>
+
     <div class="sign-in-box">
         <h1 class="title">로그인</h1>
         <form id="sign-in-form">
             <div class="input-box">
-                <input id="user-id" name="user-id" class="custom-input" type="text" type="password"/>
+                <input id="user-id" name="user-id" class="custom-input" type="text" />
                 <div id="user-id-message" class="normal-message">아이디를 입력하세요.</div>
             </div>
             <div class="input-box">
@@ -87,15 +88,16 @@
             id
             - id 속성 값 반환 또는 변경
         */
-        var userPwMessageElement = document.getElementById('user-p-message')
+        var userPwMessageElement = document.getElementById('user-p-message');
         console.log(userPwMessageElement.id);
         userPwMessageElement.id = 'user-pw-message';
+
 
         console.log('==============================');
 
         /*
             className
-            - class 속성의 값 반환 또는 변경 
+            - class 속성 값 반환 또는 변경
         */
         console.log(userPwMessageElement.className);
         userPwMessageElement.className = 'error-message';
@@ -112,7 +114,7 @@
             - string 값 반환
 
             setAttribute(attribute, value)
-            - 첫번째 매개변수로 전달한 속성의 값을 두번째 매개변수 값을 변경
+            - 첫번째 매개변수로 전달한 속성의 값을 두번째 매개변수 값으로 변경
             - undefined 반환
 
             removeAttribute(attribute)
@@ -125,7 +127,6 @@
         console.log(userPwElement.getAttribute('type'));
         userPwElement.removeAttribute('type');
 
-
         console.log('==============================');
         
         /*
@@ -137,7 +138,7 @@
             - 요소의 텍스트 콘텐츠를 반환 또는 변경
             - 마크업 무시됨
             - 요소에 새로운 텍스트 컨텐츠를 지정할 때 사용
-            - 마크엄 태그를 포함한다면 마크업을 순수 문자열로 인식
+            - 마크업 태그를 포함한다면 마크업을 순수 문자열로 인식
         */
         console.log(userPwMessageElement.textContent);
         userPwMessageElement.textContent = '잘못된 <strong>비밀번호</strong>입니다.';
@@ -150,11 +151,11 @@
             - XSS (Cross Site Script) 보안 취약점에 노출됨
         */
         console.log(userPwMessageElement.innerHTML);
-        userPwMessageElement.innerHTML =  '잘못된 <strong>비밀번호</strong>입니다.';
+        userPwMessageElement.innerHTML = '잘못된 <strong>비밀번호</strong>입니다.';
 
         // var statement = prompt('입력해주세요!');
         // userPwMessageElement.innerHTML = statement;
-        
+
         console.log('==============================');
         
         /*
@@ -163,8 +164,8 @@
             - HTMLElement 반환
 
             createTextNode(text)
-            - 매개변수로 번달한 텍스트를 요소의 텍스트 값으로 지정
-            - Text 객체 반환 
+            - 매개변수로 전달한 텍스트를 요소의 텍스트 값으로 지정
+            - Text 객체 반환
 
             appendChild(Node)
             - 매개변수로 전달한 요소를 마지막 자식 요소로 추가
@@ -178,7 +179,7 @@
         var signUpButtonText = document.createTextNode('회원가입');
         signUpButtonElement.appendChild(signUpButtonText);
         signUpButtonElement.className = 'custom-button';
-        
+
         var buttonBoxElement = document.getElementById('button-box');
         buttonBoxElement.appendChild(signUpButtonElement);
 
@@ -187,11 +188,10 @@
         /*
             insertAdjacentHTML(position, string)
             - 첫번째 매개변수로 전달한 position 위치에 두번째 매개변수로 전달한 HTML을 삽입
-            - opsition => (beforebegin, afterbegin, beforeend, afterend)
+            - position => (beforebegin, afterbegin, beforeend, afterend)
             - 두번째 매개변수는 문자열로된 HTML
         */
-        buttonBoxElement.insertAdjacentHTML('beforeend', '<button class="custom-button">회원가입</button>');
-        
+        buttonBoxElement.insertAdjacentHTML('afterbegin', '<button class="custom-button">회원가입</button>')
 
 
         console.log('==============================');
